@@ -1,49 +1,47 @@
 <script>
+  import './styles.scss'
   import kddLogo1 from '$lib/images/logo_kr_white_horizontal.svg'
   import kddLogo2 from '$lib/images/logo_kr_color_horizontal.png'
   import {page} from '$app/stores'
   $: isHome = $page.url.pathname === '/'
-  import './styles.scss'
-
-  const color = 'blue'
 </script>
 
-<div style="--heading: {color}" />
 <nav class:isHome>
-  <a href="/"><img src={kddLogo1} alt="kdd logo" /></a>
-  <a href="/about-us">About Us</a>
-  <a href="/events">Events</a>
-  <a href="/photos">Photos</a>
-  <h1>hell</h1>
+  <a href="/"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
+  <div class="links">
+    <a href="/about-us">About Us</a>
+    <a href="/events">Events</a>
+    <a href="/photos">Photos</a>
+  </div>
 </nav>
-
 <slot />
 
 <style lang="scss">
-  :root {
-    --heading: yellow;
-  }
-  h1 {
-    color: var(--heading);
+  .links {
+    display: flex;
+    gap: 24px;
   }
   nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 1px;
-    padding-top: 5px;
+    padding: 8px;
+    padding-top: 40px;
     z-index: 1200;
-    width: 100%;
     position: relative;
     a {
-      color: var(--blue);
+      color: black;
+      text-decoration: none;
     }
     img {
       width: 140px;
     }
-    background-color: pink;
   }
   .isHome {
-    // position: absolute;
-    > a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    a {
       color: white;
     }
   }
