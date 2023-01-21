@@ -1,21 +1,32 @@
-<script>
+<script lang="ts">
   import bg from '$lib/images/hero-bg.jpg'
   const style = `background: url(${bg}) center center / cover no-repeat;`
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte'
 </script>
 
-<!-- <img class="hero" src={bg} alt="hero background" /> -->
-<div class="hero" {style} />
+<div class="hero" {style}>
+  <div class="content">
+    <h1>Vancouver KDD</h1>
+    <h2>
+      저희는 밴쿠버 한인 개발자 디자이너로 이루어져 있으며 네트워킹 및 한인 사회에 기여를 추구하는
+      모임 입니다.
+    </h2>
+    <div>
+      <PrimaryButton name="he22llo" />
+    </div>
+  </div>
+</div>
 
-<!-- <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
-<style>
-  .hero {
-    /* background: url($lib/images/hero-bg.jpg) center center / cover no-repeat; */
-    height: 100vh;
-    width: auto;
-    margin: auto;
-    /* width: 100vw; */
-  }
-  /* h1 {
-    color: var(--heading);
-  } */
+<style lang="sass">
+  .hero
+    height: 100vh
+    width: auto
+    margin: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    .content
+      text-align: center
+
 </style>

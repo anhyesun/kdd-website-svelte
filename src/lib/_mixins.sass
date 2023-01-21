@@ -1,0 +1,7 @@
+@use "sass:map"
+@mixin zIndex($key)
+  z-index: map.get((mobileStepper:1000,fab:1050,speedDial:1050,appBar:1100,drawer:1200,modal:1300,snackbar:1400,tooltip:1500), $key)
+
+$baseSize: 4px
+@function size($num)
+  @return $num*$baseSize
