@@ -20,12 +20,10 @@
 <style lang="sass">
   .hero
     height: 100vh
-    width: auto
-    margin: auto
     display: flex
     align-items: center
     justify-content: center
-    color: white
+    color: var(--primaryContrast)
     .content
       text-align: center
 

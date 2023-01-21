@@ -15,6 +15,7 @@
   </div>
 </nav>
 <slot />
+<footer>hello world footer</footer>
 
 <style lang="sass">
   @import '$lib/_mixins.sass'
@@ -23,13 +24,12 @@
     display: flex
     justify-content: space-between
     margin: auto
-    padding: 8px
-    padding-top: 40px
+    max-width: screen(lg)
+    padding: size(4)
+    padding-top: size(10)
     @include zIndex(appBar)
-    max-width: 900px
     position: relative
     a
-      color: black
       text-decoration: none
     img
       width: 140px
@@ -41,8 +41,13 @@
       color: white
   .links
     display: flex
-    gap: 24px
+    gap: size(6)
     a
       font-weight: 700
-      padding: 8px
+      padding: size(2)
+  footer
+    max-width: screen(lg)
+    margin: auto
+    padding: size(4)
+    text-align: center
 </style>
