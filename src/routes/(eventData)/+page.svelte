@@ -4,7 +4,6 @@
   import PrimaryButton from '$lib/components/PrimaryButton.svelte'
 
   import type {PageData} from './$types'
-
   export let data: PageData
 </script>
 
