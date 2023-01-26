@@ -7,7 +7,7 @@
   export let data: PageData
 </script>
 
-<div class="hero" {style}>
+<div class="h-screen flex place-content-center text-" {style}>
   <div class="content">
     <h1>Vancouver KDD</h1>
     <h2>
@@ -21,14 +21,16 @@
   </div>
 </div>
 
-<style lang="sass">
-  .hero
-    height: 100vh
-    display: flex
-    align-items: center
-    justify-content: center
-    color: var(--primaryContrast)
-    .content
-      text-align: center
-
+<!-- color: var(--primaryContrast); -->
+<style lang="postcss">
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: theme(colors.gray.100);
+  }
+  .content {
+    text-align: center;
+  }
 </style>
