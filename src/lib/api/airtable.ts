@@ -11,9 +11,9 @@ export const getLatestEvents = async ({limit}: {limit: number}) => {
   return records.map((record) => {
     const {
       id,
-      fields: {date, duration, title, description, joinLink, location, photos},
+      fields: {date, duration, title, description, joinLink, location, poster},
     } = record
-    return {id, date, duration, title, description, joinLink, location, photos}
+    return {id, date, duration, title, description, joinLink, location, poster}
   })
 }
 
