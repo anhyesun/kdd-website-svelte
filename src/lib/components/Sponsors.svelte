@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let sponsors: any[] = []
+  export let sponsors: Sponsor[] = []
 </script>
 
 <div class="flex flex-row gap-8 [&>a]:w-60">
