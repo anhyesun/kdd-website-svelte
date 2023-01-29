@@ -5,6 +5,7 @@
   import Event from '$lib/components/Event.svelte'
   import Stats from '$lib/components/Stats.svelte'
   import Sponsors from '$lib/components/Sponsors.svelte'
+  import Photo from '$lib/components/Photo.svelte'
   import type {PageData} from './$types'
   export let data: PageData
 </script>
@@ -37,6 +38,15 @@
 <section>
   <h1>Sponsors</h1>
   <Sponsors sponsors={data.sponsors} />
+</section>
+
+<section>
+  <h1>Photos</h1>
+  <div class="flex flex-row gap-8">
+    {#each data.photos as photo}
+      <Photo {photo} />
+    {/each}
+  </div>
 </section>
 
 <section>

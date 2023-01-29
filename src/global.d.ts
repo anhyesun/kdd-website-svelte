@@ -28,3 +28,15 @@ declare interface Event {
   poster: Attachment
   PhotosIds: string[]
 }
+
+declare interface Organizer {
+  name: string
+  title: string
+  profile: Attachment
+  description: string
+  socialMediaType: string
+  socialMediaLink: string
+  socialMediaType2: string
+  socialMediaLink2: string
+  isDraft: boolean
+}
