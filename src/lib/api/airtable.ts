@@ -11,7 +11,16 @@ export const getLatestEvents = async ({limit}: {limit: number}) => {
   return records.map((record) => {
     const {
       id,
-      fields: {date, duration, title, description, joinLink, location, poster: attachments},
+      fields: {
+        date,
+        duration,
+        title,
+        description,
+        joinLink,
+        location,
+        poster: attachments,
+        PhotosIds,
+      },
     } = record
     return {
       id,
@@ -22,6 +31,7 @@ export const getLatestEvents = async ({limit}: {limit: number}) => {
       joinLink,
       location,
       poster: (attachments as Attachment[])?.[0],
+      PhotosIds,
     }
   }) as Event[]
 }
@@ -50,9 +60,11 @@ export const getPhotos = async () => {
   const base = Airtable.base(AIRTABLE_KDD_BASE)
   const records = await base('Photos').select().firstPage()
   return records.map((record) => {
-    const name = record.fields.name as string
-    const logo = (record.fields.logo as Attachment[])?.[0]
-    const link = record.fields.link as string
-    return {name, logo, link}
+    const id = record.id
+    const title = record.fields.title as string
+    const description = record.fields.description as string
+    const photos = record.fields.photos as Attachment[]
+    const EventsId = (record.fields.EventsId as string[])?.[0]
+    return {id, title, description, photos, EventsId}
   }) as Photo[]
 }

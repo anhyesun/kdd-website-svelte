@@ -5,9 +5,11 @@ declare interface Sponsor {
 }
 
 declare interface Photo {
-  name: string
-  logo: Attachment
-  link: string
+  id: string
+  title: string
+  description: string
+  photos: Attachment[]
+  EventsId: string
 }
 
 declare interface Stats {
@@ -24,4 +26,5 @@ declare interface Event {
   joinLink: string
   location: string
   poster: Attachment
+  PhotosIds: string[]
 }
