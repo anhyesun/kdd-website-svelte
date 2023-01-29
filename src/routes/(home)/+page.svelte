@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/Button.svelte'
-  import LinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
-  import Slack from 'svelte-icons/fa/FaSlack.svelte'
+  // import LinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
+  // import Slack from 'svelte-icons/fa/FaSlack.svelte'
   import Event from '$lib/components/Event.svelte'
   import Stats from '$lib/components/Stats.svelte'
   import Sponsors from '$lib/components/Sponsors.svelte'
@@ -18,11 +18,11 @@
     </h2>
     <div class="flex flex-row gap-8">
       <Button secondary className="gap-2">
-        <div class="h-5"><LinkedIn /></div>
+        <!-- <div class="h-5"><LinkedIn /></div> -->
         LINKEDIN
       </Button>
       <Button secondary className="gap-2">
-        <div class="h-5"><Slack /></div>
+        <!-- <div class="h-5"><Slack /></div> -->
         JOIN SLACK
       </Button>
     </div>
