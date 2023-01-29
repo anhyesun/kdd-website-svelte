@@ -4,6 +4,10 @@
   import kddLogo2 from '$lib/images/logo_kr_color_horizontal.png'
   import {page} from '$app/stores'
   $: isHome = $page.url.pathname === '/'
+
+  import type {LayoutServerData} from './$types'
+  export let data: LayoutServerData
+  const {developers, supporters} = data
 </script>
 
 <nav
@@ -18,4 +22,15 @@
   </div>
 </nav>
 <slot />
-<footer class="max-w-screen-lg m-auto p-4 text-center">Footer</footer>
+<footer class="max-w-screen-lg m-auto p-4 text-center">
+  <div class="flex flex-row gap-4">
+    {#each developers as developer}
+      <a href={developer.link}>{developer.name}</a>
+    {/each}
+  </div>
+  <div class="flex flex-row gap-4">
+    {#each supporters as supporter}
+      <a href={supporter.link}>{supporter.name}</a>
+    {/each}
+  </div>
+</footer>

@@ -40,3 +40,8 @@ declare interface Organizer {
   socialMediaLink2: string
   isDraft: boolean
 }
+
+declare interface Contributor {
+  name: string
+  link: string
+}

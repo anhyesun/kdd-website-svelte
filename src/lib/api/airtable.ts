@@ -97,3 +97,21 @@ export const getOrganizers = async () => {
     }
   }) as Organizer[]
 }
+
+export const getContributors = async () => {
+  const base = Airtable.base(AIRTABLE_KDD_BASE)
+  const records = await base('Contributors').select().firstPage()
+  const developers: Contributor[] = []
+  const supporters: Contributor[] = []
+  records.forEach((record) => {
+    const name = record.fields.name as string
+    const link = record.fields.link as string
+    const type = record.fields.type as string
+    if (type === 'developer') {
+      developers.push({name, link})
+    } else if (type === 'supporter') {
+      supporters.push({name, link})
+    }
+  })
+  return {developers, supporters}
+}
