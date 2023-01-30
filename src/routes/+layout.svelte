@@ -11,7 +11,7 @@
 </script>
 
 <nav
-  class={'flex flex-row justify-between m-auto max-w-screen-lg p-4 pt-10 z-30'}
+  class={'z-30 m-auto flex max-w-screen-lg flex-row justify-between p-4 pt-10'}
   class:absolute-fill-x={isHome}
 >
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
@@ -22,7 +22,7 @@
   </div>
 </nav>
 <slot />
-<footer class="max-w-screen-lg m-auto p-4 text-center">
+<footer class="m-auto max-w-screen-lg p-4 text-center">
   <div class="flex flex-row gap-4">
     {#each developers as developer}
       <a href={developer.link}>{developer.name}</a>
