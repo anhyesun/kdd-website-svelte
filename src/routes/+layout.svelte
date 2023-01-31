@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.sass'
+  import clsx from 'clsx'
   import kddLogo1 from '$lib/images/logo_kr_white_horizontal.svg'
   import kddLogo2 from '$lib/images/logo_kr_color_horizontal.png'
   import {page} from '$app/stores'
@@ -11,8 +12,10 @@
 </script>
 
 <nav
-  class={'z-30 m-auto flex max-w-screen-lg flex-row justify-between p-4 pt-10'}
-  class:absolute-fill-x={isHome}>
+  class={clsx(
+    'z-30 m-auto flex max-w-screen-lg flex-row justify-between p-4 pt-10',
+    isHome && 'absolute inset-x-0'
+  )}>
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
   <div class="{'flex flex-row gap-6 font-bold [&>a]:p-2 '}{isHome ? 'text-white' : 'text-black'}">
     <a href="/about">About Us</a>
