@@ -11,7 +11,6 @@
     primary && 'bg-primary text-primaryContrast',
     secondary && 'bg-secondary text-secondaryContrast',
     className
-  )}
->
+  )}>
   <slot />
 </button>

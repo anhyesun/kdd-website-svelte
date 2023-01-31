@@ -12,8 +12,7 @@
 
 <nav
   class={'z-30 m-auto flex max-w-screen-lg flex-row justify-between p-4 pt-10'}
-  class:absolute-fill-x={isHome}
->
+  class:absolute-fill-x={isHome}>
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
   <div class="{'flex flex-row gap-6 font-bold [&>a]:p-2 '}{isHome ? 'text-white' : 'text-black'}">
     <a href="/about">About Us</a>
