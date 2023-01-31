@@ -21,4 +21,4 @@ Deploys from github.com/Vancouver-KDD/kdd-website-svelte (branch: `staging`)
 
 Email: vancouverkdd@gmail.com
 Base(KDD Website): https://airtable.com/appP7nCKHGwEZ2xe1
-Tables: Events, Organizers, Photos, Sponsors, Footer, Statistics, Jobs
+Tables: Events, Organizers, Photos, Sponsors, Footer, Statistics, Jobs.
