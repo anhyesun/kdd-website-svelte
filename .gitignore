@@ -2,9 +2,9 @@
 node_modules
 /build
 /.svelte-kit
+/.netlify
 /package
 .env.*
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-.netlify

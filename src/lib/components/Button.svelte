@@ -7,11 +7,10 @@
 
 <button
   class={clsx(
-    'flex-center py-2 px-4 rounded',
+    'flex-center rounded py-2 px-4',
     primary && 'bg-primary text-primaryContrast',
     secondary && 'bg-secondary text-secondaryContrast',
     className
-  )}
->
+  )}>
   <slot />
 </button>
