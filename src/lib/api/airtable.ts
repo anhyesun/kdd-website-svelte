@@ -75,7 +75,6 @@ export const getOrganizers = async () => {
   const base = Airtable.base(AIRTABLE_KDD_BASE)
   const records = await base('Organizers').select({filterByFormula: '{isDraft} = 0'}).firstPage()
   return records.map((record) => {
-    console.log(record)
     const name = record.fields.name as string
     const title = record.fields.title as string
     const profile = (record.fields.profile as Attachment[])?.[0]
