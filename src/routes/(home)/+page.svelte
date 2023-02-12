@@ -31,25 +31,27 @@
 </section>
 
 <section>
-  <h1>Stats</h1>
   <Stats stats={data.stats} />
 </section>
 
 <section>
-  <h1>Sponsors</h1>
   <Sponsors sponsors={data.sponsors} />
 </section>
 
 <section>
-  <h1>Photos</h1>
-  <div class="flex flex-row gap-8">
-    {#each data.photos as photo}
-      <Photo {photo} />
-    {/each}
-  </div>
+  <Event event={data.events?.[0]} />
 </section>
 
+<!-- 
 <section>
-  <h1>Upcoming Event</h1>
-  <Event event={data.events?.[0]} />
+ <h1>Photos</h1>
+ <div class="flex flex-row gap-8 overflow-hidden">
+   {#each data.photos as photo}
+     <Photo {photo} />
+   {/each}
+ </div>
+</section> -->
+
+<section>
+  <h1>contact us</h1>
 </section>

@@ -4,10 +4,11 @@
 </script>
 
 <div>
-  <div class="flex flex-row">
-    {#each photos as photo}
-      <img class="w-40" src={photo.url} alt="img" />
-    {/each}
+  <div class="flex flex-row gap-2">
+    <img class="object-cover h-56 w-84" src={photos[0].url} alt="img: {description} {photos[0].filename}" loading="lazy" />
+    <!--{#each photos as photo}-->
+    <!--  <img class="h-56 w-84" src={photo.url} alt="img: {description} {photo.filename}" loading="lazy" />-->
+    <!--{/each}-->
   </div>
   <div>title: {title}</div>
   <div>description: {description}</div>

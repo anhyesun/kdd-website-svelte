@@ -4,6 +4,9 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
+    fontFamily: {
+      roboto: ['Roboto', 'sans-serif'],
+    },
     // @return map.get((xs:0,sm:480px,md:768px,lg:992px,xl:1200px, xxl: 1400px), $key)
     // screens: {
     //   xs: 0,
@@ -16,6 +19,9 @@ module.exports = {
       textColor: {
         primaryContrast: 'white',
         secondaryContrast: 'white',
+      },
+      colors: {
+        'gray-highlight': '#eee',
       },
       backgroundColor: {
         primary: 'hsl(240, 91%, 56%)',
