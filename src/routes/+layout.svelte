@@ -13,7 +13,7 @@
 
 <nav
   class={clsx(
-    'z-30 m-auto flex max-w-screen-lg flex-row justify-between p-4 pt-10',
+    'z-30 m-auto flex max-w-4xl flex-row justify-between p-4 pt-10',
     isHome && 'absolute inset-x-0'
   )}>
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
@@ -24,15 +24,19 @@
   </div>
 </nav>
 <slot />
-<footer class="m-auto max-w-screen-lg p-4 text-center">
-  <div class="flex flex-row gap-4">
+<footer class="p-8 flex-center flex-col gap-2">
+  <span class="font-bold text-xl">Developed by</span>
+  <div class="max-w-4xl">
     {#each developers as developer}
-      <a href={developer.link}>{developer.name}</a>
+      <a class={clsx('mx-1', developer.link && 'font-medium')} href={developer.link}
+        >{developer.name}</a>
     {/each}
   </div>
-  <div class="flex flex-row gap-4">
+  <span class="font-bold text-xl">Special thanks to</span>
+  <div class="max-w-4xl">
     {#each supporters as supporter}
-      <a href={supporter.link}>{supporter.name}</a>
+      <a class={clsx('mx-1', supporter.link && 'font-medium')} href={supporter.link}
+        >{supporter.name}</a>
     {/each}
   </div>
 </footer>
