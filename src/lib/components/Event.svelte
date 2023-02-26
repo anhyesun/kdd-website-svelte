@@ -1,16 +1,25 @@
 <script lang="ts">
   import moment from 'moment'
+  import {Button} from '$lib/components'
   export let event: Event
+
+  $: isPastEvent = new Date(event.date).getMilliseconds() < new Date().getMilliseconds()
 </script>
 
-<h1>Upcoming Event</h1>
-<div class="flex-center flex flex-row">
-  <img class="h-80 w-auto object-cover" src={event.poster?.url} alt="last event" />
-  <div class="h-80 w-96 flex-row overflow-hidden bg-gray-highlight px-8">
-    <p>dateString: {moment(event.date).format('LL LT')}</p>
-    <p>dateDescription: {moment(event.date).fromNow()}</p>
-    <p>title: {event.title}</p>
-    <p>description: {event.description}</p>
-    <p>joinLink: {event.joinLink}</p>
+<div class="rounded-md overflow-hidden flex-center flex-col md:flex-row grid grid-cols-2">
+  <img class="h-full object-cover" src={event.poster?.url} alt="event poster" />
+  <div class="h-full flex bg-gray-100 p-6 gap-3">
+    <div>
+      <p>
+        {moment(event.date).format('MMM D, H:MM A')}
+      </p>
+      <p class="font-medium">{event.location}</p>
+    </div>
+    <h3 class="text-2xl font-bold line-clamp-1">{event.title}</h3>
+    <p class="line-clamp-5">
+      {event.description}
+    </p>
+    <Button disabled={isPastEvent} class="rounded-full" href={event.joinLink}
+      >{isPastEvent ? 'CLOSED' : 'SIGN UP'}</Button>
   </div>
 </div>

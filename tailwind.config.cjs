@@ -1,31 +1,37 @@
 const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-    },
-    // @return map.get((xs:0,sm:480px,md:768px,lg:992px,xl:1200px, xxl: 1400px), $key)
-    // screens: {
-    //   xs: 0,
-    //   sm: '480px',
-    //   md: '768px',
-    //   lg: '976px',
-    //   xl: '1440px',
-    // },
     extend: {
-      textColor: {
-        primaryContrast: 'white',
-        secondaryContrast: 'white',
-      },
+      gray: colors.neutral,
       colors: {
-        'gray-highlight': '#eee',
-      },
-      backgroundColor: {
-        primary: 'hsl(240, 91%, 56%)',
-        secondary: 'hsl(343, 91%, 56%)',
+        radicalRed: {
+          50: '#ffe6eb',
+          100: '#ffccd8',
+          200: '#ffccd8',
+          300: '#ff6b92',
+          400: '#fc4678',
+          500: '#f52763',
+          600: '#ce214f',
+          700: '#a61d3e',
+          800: '#7f1a30',
+          900: '#581522',
+        },
+        royalBlue: {
+          50: '#e8efff',
+          100: '#d8e3ff',
+          200: '#b9c5ff',
+          300: '#939eff',
+          400: '#747cf8',
+          500: '#5d5fef',
+          600: '#3d47c5',
+          700: '#26379c',
+          800: '#162972',
+          900: '#0b1c48',
+        },
       },
       textShadow: {
         default: '0px 0px 1px rgb(0 0 0 / 20%), 0px 0px 1px rgb(1 0 5 / 10%)',
@@ -38,6 +44,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/line-clamp'),
     plugin(function ({addBase, addComponents, matchUtilities, theme}) {
       matchUtilities(
         {
@@ -50,6 +57,11 @@ module.exports = {
       addBase({
         '.flex': {
           'flex-direction': 'column',
+        },
+        '.debug': {
+          'outline-width': '2px',
+          'outline-color': 'pink',
+          'outline-style': 'dashed',
         },
       })
       addComponents({
