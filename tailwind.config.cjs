@@ -6,8 +6,8 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      gray: colors.neutral,
       colors: {
+        gray: colors.neutral,
         radicalRed: {
           50: '#ffe6eb',
           100: '#ffccd8',
