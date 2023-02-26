@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Button, Event, Section, Stats, Sponsors, Photo} from '$lib/components'
+  import {Button, EventCard, Section, Stats, Sponsors, Photo} from '$lib/components'
   // import LinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
   // import Slack from 'svelte-icons/fa/FaSlack.svelte'
   import ellipse from '$lib/images/ellipse.svg'
@@ -40,7 +40,7 @@
   </Section>
 
   <Section title={isPastEvent ? 'Past Event' : 'Upcoming Event'}>
-    <Event event={data.events?.[0]} />
+    <EventCard event={data.events?.[0]} />
   </Section>
 
   <!-- 
