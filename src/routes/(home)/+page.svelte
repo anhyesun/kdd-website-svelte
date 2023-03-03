@@ -6,18 +6,18 @@
   import type {PageData} from './$types'
   export let data: PageData
 
-  $: isPastEvent = new Date(data.events?.[0]?.date).getMilliseconds() < new Date().getMilliseconds()
+  $: isPastEvent = new Date(data.event.date).getMilliseconds() < new Date().getMilliseconds()
 </script>
 
-<div class="flex flex-col gap-10">
+<div class="flex-col gap-10">
   <section class={`flex-center h-screen bg-[url('$lib/images/hero-bg.jpg')] bg-cover bg-center`}>
-    <div class="flex items-center gap-8 text-center text-white px-4">
+    <div class="flex-col items-center gap-8 text-center text-white px-4">
       <h1 class="text-4xl md:text-5xl font-bold text-shadow-lg">Vancouver KDD</h1>
       <h2 class="text-lg md:text-xl">
         저희는 밴쿠버 한인 개발자 디자이너로 이루어져 있으며 네트워킹 및 한인 사회에 기여를 추구하는
         모임 입니다.
       </h2>
-      <div class="flex flex-row gap-8">
+      <div class="flex-row gap-8">
         <Button class="gap-2">
           <!-- <div class="h-5"><LinkedIn /></div> -->
           LINKEDIN
@@ -40,13 +40,34 @@
   </Section>
 
   <Section title={isPastEvent ? 'Past Event' : 'Upcoming Event'}>
-    <EventCard event={data.events?.[0]} />
+    <EventCard event={data.event} />
+  </Section>
+
+  <Section title={'Photos'}>
+    <div class="flex-row gap-2 overflow-x-auto">
+      {#each data.photos as { title, description, photos, id }, i (id)}
+        {i}
+        <div class="flex-col gap-2 flex-grow">
+          <div class="flex-row gap-2">
+            {#each photos as photo (photo.id)}
+              <img
+                class="h-56 bg-slate-500"
+                src={photo.url}
+                alt="{description} {photo.filename}"
+                loading="lazy" />
+            {/each}
+          </div>
+          <div>title: {title}</div>
+          <div>description: {description}</div>
+        </div>
+      {/each}
+    </div>
   </Section>
 
   <!-- 
 <section>
  <h1>Photos</h1>
- <div class="flex flex-row gap-8 overflow-hidden">
+ <div class="flex-row gap-8 overflow-hidden">
    {#each data.photos as photo}
      <Photo {photo} />
    {/each}

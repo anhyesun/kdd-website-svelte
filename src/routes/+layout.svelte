@@ -13,18 +13,18 @@
 
 <nav
   class={clsx(
-    'z-30 m-auto flex max-w-4xl flex-row justify-between p-4 pt-10',
+    'z-30 m-auto max-w-4xl flex-row justify-between p-4 pt-10',
     isHome && 'absolute inset-x-0'
   )}>
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>
-  <div class="{'flex flex-row gap-6 font-bold [&>a]:p-2 '}{isHome ? 'text-white' : 'text-black'}">
+  <div class="{'flex-row gap-6 font-bold [&>a]:p-2 '}{isHome ? 'text-white' : 'text-black'}">
     <a href="/about">About Us</a>
     <a href="/events">Events</a>
     <a href="/photos">Photos</a>
   </div>
 </nav>
 <slot />
-<footer class="p-8 flex-center flex-col gap-2">
+<footer class="p-8 flex-col items-center gap-2">
   <span class="font-bold text-xl">Developed by</span>
   <div class="max-w-4xl">
     {#each developers as developer}

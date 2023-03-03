@@ -13,7 +13,7 @@
       src={event.poster?.url}
       alt="event poster" />
   </div>
-  <div class="h-full flex min-h-64 bg-gray-100 p-6 gap-3">
+  <div class="h-full flex-col min-h-64 bg-gray-100 p-6 gap-3">
     <div class="text-sm">
       <p>
         {moment(event.date).format('MMM D, H:MM A')}

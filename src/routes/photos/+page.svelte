@@ -6,7 +6,7 @@
 
 <section>
   <h1>Photos</h1>
-  <div class="flex flex-row gap-8 [&>a]:w-60">
+  <div class="flex-row gap-8 [&>a]:w-60">
     {#each data.photos as photo}
       <Photo {photo} />
     {/each}

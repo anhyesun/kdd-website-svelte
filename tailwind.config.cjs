@@ -61,8 +61,11 @@ module.exports = {
         {values: theme('textShadow')}
       )
       addBase({
-        '.flex': {
-          'flex-direction': 'column',
+        '.flex-col': {
+          display: 'flex',
+        },
+        '.flex-row': {
+          display: 'flex',
         },
         '.debug': {
           'outline-width': '2px',

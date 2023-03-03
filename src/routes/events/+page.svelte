@@ -17,7 +17,7 @@
   })
 </script>
 
-<div class="flex gap-16">
+<div class="flex-col gap-16">
   <Section title="Upcoming Event">
     {#if upcomingEvents.length > 0}
       {#each upcomingEvents as event}
@@ -32,7 +32,7 @@
             src={comingSoonPoster}
             alt="event poster" />
         </div>
-        <div class="h-full flex bg-gray-100 p-6 gap-3 flex-center">
+        <div class="h-full bg-gray-100 p-6 gap-3 flex-center">
           <h3 class="text-2xl font-bold line-clamp-1">No Upcoming Event</h3>
           <h4 class="text-lg font-medium line-clamp-1">Check Back Soon!</h4>
         </div>
