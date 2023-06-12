@@ -12,6 +12,9 @@ const config = {
       edge: true,
     }),
   },
+  vitePlugin: {
+    inspector: true,
+  },
 }
 
 export default config

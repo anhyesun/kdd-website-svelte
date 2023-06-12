@@ -33,7 +33,7 @@ export const getLatestEvents = async ({limit}: {limit: number}) => {
       poster: (attachments as Attachment[])?.[0],
       PhotosIds,
     }
-  }) as Event[]
+  }) as DB.Event[]
 }
 
 export const getStats = async () => {
@@ -42,7 +42,7 @@ export const getStats = async () => {
   return {
     eventsCount: records[0]?.fields?.eventsCount as number,
     members: records.at(0)?.fields?.members as number,
-  } as Stats
+  } as DB.Stats
 }
 
 export const getSponsors = async () => {
@@ -53,7 +53,7 @@ export const getSponsors = async () => {
     const logo = (record.fields.logo as Attachment[])?.[0]
     const link = record.fields.link as string
     return {name, logo, link}
-  }) as Sponsor[]
+  }) as DB.Sponsor[]
 }
 
 export const getPhotos = async ({limit}: {limit: number}) => {
@@ -68,7 +68,7 @@ export const getPhotos = async ({limit}: {limit: number}) => {
     const photos = record.fields.photos as Attachment[]
     const EventsId = (record.fields.EventsId as string[])?.[0]
     return {id, title, description, photos, EventsId}
-  }) as Photo[]
+  }) as DB.Photo[]
 }
 
 export const getOrganizers = async () => {
@@ -94,14 +94,14 @@ export const getOrganizers = async () => {
       socialMediaType2,
       socialMediaLink2,
     }
-  }) as Organizer[]
+  }) as DB.Organizer[]
 }
 
 export const getContributors = async () => {
   const base = Airtable.base(AIRTABLE_KDD_BASE)
   const records = await base('Contributors').select().firstPage()
-  const developers: Contributor[] = []
-  const supporters: Contributor[] = []
+  const developers: DB.Contributor[] = []
+  const supporters: DB.Contributor[] = []
   records.forEach((record) => {
     const name = record.fields.name as string
     const link = record.fields.link as string

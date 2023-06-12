@@ -6,12 +6,8 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      minWidth: (theme) => ({
-        ...theme('spacing'),
-      }),
-      minHeight: (theme) => ({
-        ...theme('spacing'),
-      }),
+      minWidth: (theme) => theme('spacing'),
+      minHeight: (theme) => theme('spacing'),
       colors: {
         gray: colors.neutral,
         radicalRed: {
@@ -50,7 +46,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
     plugin(function ({addBase, addComponents, matchUtilities, theme}) {
       matchUtilities(
         {
