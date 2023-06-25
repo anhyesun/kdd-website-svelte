@@ -40,8 +40,10 @@
   </Section>
 
   <Section title="Past Events">
-    {#each pastEvents as event}
-      <EventCard {event} />
-    {/each}
+    <div class="flex-col gap-20">
+      {#each pastEvents as event}
+        <EventCard {event} />
+      {/each}
+    </div>
   </Section>
 </div>

@@ -4,7 +4,9 @@
   export let size: 'sm' | 'md' | 'lg' | 'xl' = 'md'
 </script>
 
-<button
+<svelte:element
+  this={$$restProps.href && !disabled ? 'a' : 'button'}
+  on:click
   {...$$restProps}
   class={clsx(
     'flex-center rounded px-4 font-medium',
@@ -18,4 +20,4 @@
     $$restProps.class
   )}>
   <slot />
-</button>
+</svelte:element>

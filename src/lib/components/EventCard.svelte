@@ -6,14 +6,14 @@
   $: isPastEvent = new Date(event.date).getMilliseconds() < new Date().getMilliseconds()
 </script>
 
-<div class="w-full max-h-72 rounded-md overflow-hidden grid max-md:grid-cols-1 md:grid-cols-2">
+<div class="w-full md:max-h-72 rounded-md overflow-hidden grid max-md:grid-cols-1 md:grid-cols-2">
   <div class="h-full overflow-hidden">
     <img
       class="h-full w-full object-cover hover:scale-110 transition-transform duration-500"
       src={event.poster?.url}
       alt="event poster" />
   </div>
-  <div class="h-full flex-col min-h-64 bg-gray-100 p-6 gap-3">
+  <div class="h-full flex-col min-h-40 bg-gray-100 p-6 gap-3">
     <div class="text-sm">
       <p>
         {moment(event.date).format('MMM D, H:MM A')}
@@ -25,8 +25,9 @@
       {event.description ?? ''}
     </p>
     {#if event.joinLink}
-      <Button disabled={isPastEvent} class="rounded-full" href={event.joinLink}
-        >{isPastEvent ? 'CLOSED' : 'SIGN UP'}</Button>
+      <Button disabled={isPastEvent} class="rounded-full" href={event.joinLink}>
+        {isPastEvent ? 'CLOSED' : 'SIGN UP'}
+      </Button>
     {/if}
   </div>
 </div>
