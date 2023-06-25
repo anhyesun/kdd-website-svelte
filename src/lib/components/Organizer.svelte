@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SocialMediaIcon from './SocialMediaIcon.svelte'
+
   export let organizer: DB.Organizer
   const {
     name,
@@ -13,12 +15,18 @@
 </script>
 
 <div>
-  <div>name: {name}</div>
-  <div>title: {title}</div>
-  <img class="w-40" src={profile?.url} alt="img" />
-  <div>description: {description}</div>
-  <div>socialMediaType: {socialMediaType}</div>
-  <a href={socialMediaLink}>{socialMediaLink}</a>
-  <div>socialMediaType2: {socialMediaType2}</div>
-  <a href={socialMediaLink2}>{socialMediaLink2}</a>
+  <img class="w-full aspect-square object-cover rounded" src={profile?.url} alt="img" />
+  <div class="w-full p-2">
+    <div class="text-xl font-bold">{name}</div>
+    <div class="font-bold">{title}</div>
+    {#if description}<div>description: {description}</div>{/if}
+    <div class="flex gap-4 p-2">
+      {#if socialMediaType && socialMediaLink}
+        <SocialMediaIcon {socialMediaType} href={socialMediaLink} />
+      {/if}
+      {#if socialMediaType2 && socialMediaLink2}
+        <SocialMediaIcon socialMediaType={socialMediaType2} href={socialMediaLink2} />
+      {/if}
+    </div>
+  </div>
 </div>
