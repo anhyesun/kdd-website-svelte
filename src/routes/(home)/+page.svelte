@@ -1,9 +1,8 @@
 <script lang="ts">
   import {Button, EventCard, Section, Stats, Sponsors, Photos} from '$lib/components'
-  // import LinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
-  // import Slack from 'svelte-icons/fa/FaSlack.svelte'
   import ellipse from '$lib/images/ellipse.svg'
   import type {PageData} from './$types'
+  import {LinkedIn, Slack} from '$lib/icons'
   export let data: PageData
 
   $: isPastEvent = new Date(data.event.date).getMilliseconds() < new Date().getMilliseconds()
@@ -18,12 +17,14 @@
         모임 입니다.
       </h2>
       <div class="flex-row gap-8">
-        <Button class="gap-2">
-          <!-- <div class="h-5"><LinkedIn /></div> -->
+        <Button class="gap-2" href="https://www.linkedin.com/company/vancouver-kdd">
+          <LinkedIn class="h-5" />
           LINKEDIN
         </Button>
-        <Button class="gap-2">
-          <!-- <div class="h-5"><Slack /></div> -->
+        <Button
+          class="gap-2"
+          href="https://join.slack.com/t/vancouverkdd/shared_invite/zt-1xyhcghtg-OIgE_8OO_SmBMpyOPuH5Ew">
+          <Slack />
           JOIN SLACK
         </Button>
       </div>

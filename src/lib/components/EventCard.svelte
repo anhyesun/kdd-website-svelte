@@ -1,5 +1,5 @@
 <script lang="ts">
-  import moment from 'moment'
+  import {DateTime} from 'luxon'
   import {Button} from '$lib/components'
   export let event: DB.Event
 
@@ -16,7 +16,7 @@
   <div class="h-full flex-col min-h-40 bg-gray-100 p-6 gap-3">
     <div class="text-sm">
       <p>
-        {moment(event.date).format('MMM D, H:MM A')}
+        {DateTime.fromISO(event.date).toFormat('LLL dd, H:mm a')}
       </p>
       <p class="font-medium">{event.location ?? ''}</p>
     </div>
