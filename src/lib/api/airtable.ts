@@ -2,6 +2,7 @@ import {AIRTABLE_TOKEN, AIRTABLE_KDD_BASE} from '$env/static/private'
 import Airtable from 'airtable'
 Airtable.configure({apiKey: AIRTABLE_TOKEN})
 console.log('AIRTABLE', AIRTABLE_TOKEN.slice(0, 10))
+console.log('AIRTABLE_KDD_BASE', AIRTABLE_KDD_BASE.slice(0, 10))
 import type {Attachment} from 'airtable'
 
 export const getLatestEvents = async ({limit}: {limit: number}) => {
