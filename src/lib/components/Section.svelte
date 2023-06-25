@@ -6,7 +6,12 @@
 <section class={clsx('flex-center', $$restProps.class)}>
   <div class="flex-col w-full max-w-4xl gap-6">
     {#if title}
-      <h2 class="text-2xl md:text-3xl font-bold text-center">{title}</h2>
+      <div class="flex-col flex-center gap-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-center">
+          {title}
+        </h2>
+        <div class="w-36 h-0.5 bg-red-500" />
+      </div>
     {/if}
     <slot />
   </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import moment from 'moment'
   import {Button} from '$lib/components'
-  export let event: Event
+  export let event: DB.Event
 
   $: isPastEvent = new Date(event.date).getMilliseconds() < new Date().getMilliseconds()
 </script>

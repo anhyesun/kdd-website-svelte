@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let organizer: Organizer
+  export let organizer: DB.Organizer
   const {
     name,
     title,

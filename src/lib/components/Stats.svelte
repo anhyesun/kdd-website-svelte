@@ -1,7 +1,7 @@
 <script lang="ts">
   import largeStatImg from '$lib/images/stat-large.png'
   import smallStatImg from '$lib/images/stat-small.jpeg'
-  export let stats: Stats
+  export let stats: DB.Stats
 </script>
 
 <div class="flex-center flex-row gap-4">

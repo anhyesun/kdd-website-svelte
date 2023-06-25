@@ -5,8 +5,8 @@
   export let data: PageData
   const {events} = data
 
-  const pastEvents: Event[] = []
-  const upcomingEvents: Event[] = []
+  const pastEvents: DB.Event[] = []
+  const upcomingEvents: DB.Event[] = []
   const now = new Date().getMilliseconds()
   events.forEach((event) => {
     if (new Date(event.date).getMilliseconds() < now) {
@@ -24,15 +24,14 @@
         <EventCard {event} />
       {/each}
     {:else}
-      <div
-        class="max-h-72 rounded-md overflow-hidden md:flex-row grid max-md:grid-cols-1 md:grid-cols-2">
+      <div class="max-h-72 rounded-md overflow-hidden grid max-md:grid-cols-1 md:grid-cols-2">
         <div class="h-full overflow-hidden">
           <img
             class="h-full w-full object-cover hover:scale-110 transition-transform duration-500"
             src={comingSoonPoster}
             alt="event poster" />
         </div>
-        <div class="h-full bg-gray-100 p-6 gap-3 flex-center">
+        <div class="h-full bg-gray-100 p-6 gap-3 flex-center flex-col">
           <h3 class="text-2xl font-bold line-clamp-1">No Upcoming Event</h3>
           <h4 class="text-lg font-medium line-clamp-1">Check Back Soon!</h4>
         </div>

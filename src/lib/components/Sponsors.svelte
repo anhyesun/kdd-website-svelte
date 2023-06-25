@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let sponsors: Sponsor[] = []
+  export let sponsors: DB.Sponsor[] = []
 </script>
 
 <div class="flex-center sm:flex-row gap-8 [&>a]:w-60">

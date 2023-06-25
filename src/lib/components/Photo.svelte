@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let photo: Photo
+  export let photo: DB.Photo
   const {id, title, description, photos, EventsId} = photo
 </script>
 

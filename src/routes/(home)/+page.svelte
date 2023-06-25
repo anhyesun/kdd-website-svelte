@@ -44,23 +44,22 @@
   </Section>
 
   <Section title={'Photos'}>
-    <div class="flex-row gap-2 overflow-x-auto">
-      {#each data.photos as { title, description, photos, id }, i (id)}
-        {i}
-        <div class="flex-col gap-2 flex-grow">
-          <div class="flex-row gap-2">
-            {#each photos as photo (photo.id)}
+    <div class="flex w-full">
+      <div class="flex w-full overflow-x-auto gap-4 text-center">
+        {#each data.photos as { title, description, photos, id } (id)}
+          {#each photos as photo (photo.id)}
+            <div>
               <img
-                class="h-56 bg-slate-500"
+                class="bg-slate-500 min-w-80 aspect-video object-cover"
                 src={photo.url}
                 alt="{description} {photo.filename}"
                 loading="lazy" />
-            {/each}
-          </div>
-          <div>title: {title}</div>
-          <div>description: {description}</div>
-        </div>
-      {/each}
+              <div class="text-lg font-bold">{title}</div>
+              <div>{description}</div>
+            </div>
+          {/each}
+        {/each}
+      </div>
     </div>
   </Section>
 
