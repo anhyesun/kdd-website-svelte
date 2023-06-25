@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Button, EventCard, Section, Stats, Sponsors, Photo} from '$lib/components'
+  import {Button, EventCard, Section, Stats, Sponsors, Photos} from '$lib/components'
   // import LinkedIn from 'svelte-icons/fa/FaLinkedIn.svelte'
   // import Slack from 'svelte-icons/fa/FaSlack.svelte'
   import ellipse from '$lib/images/ellipse.svg'
@@ -44,34 +44,14 @@
   </Section>
 
   <Section title={'Photos'}>
-    <div class="flex w-full">
-      <div class="flex w-full overflow-x-auto gap-4 text-center">
-        {#each data.photos as { title, description, photos, id } (id)}
-          {#each photos as photo (photo.id)}
-            <div>
-              <img
-                class="bg-slate-500 min-w-80 aspect-video object-cover"
-                src={photo.url}
-                alt="{description} {photo.filename}"
-                loading="lazy" />
-              <div class="text-lg font-bold">{title}</div>
-              <div>{description}</div>
-            </div>
-          {/each}
-        {/each}
-      </div>
+    <div class="flex w-full overflow-x-auto gap-4 text-center">
+      <Photos dbPhotos={data.photos} />
     </div>
   </Section>
 
-  <!-- 
-<section>
- <h1>Photos</h1>
- <div class="flex-row gap-8 overflow-hidden">
-   {#each data.photos as photo}
-     <Photo {photo} />
-   {/each}
- </div>
-</section> -->
-
-  <Section title="Contact Us" />
+  <Section title="Contact Us">
+    <a class="text-2xl font-bold text-center" href="mailto:vancouverkdd@gmail.com">
+      vancouverkdd@gmail.com
+    </a>
+  </Section>
 </div>

@@ -1,10 +1,8 @@
-import Button from './Button.svelte'
-import ContactUs from './ContactUs.svelte'
-import EventCard from './EventCard.svelte'
-import Organizer from './Organizer.svelte'
-import Photo from './Photo.svelte'
-import Sponsors from './Sponsors.svelte'
-import Stats from './Stats.svelte'
-import Section from './Section.svelte'
-
-export {Button, ContactUs, EventCard, Organizer, Photo, Section, Sponsors, Stats}
+export {default as Button} from './Button.svelte'
+export {default as ContactUs} from './ContactUs.svelte'
+export {default as EventCard} from './EventCard.svelte'
+export {default as Organizer} from './Organizer.svelte'
+export {default as Photos} from './Photos.svelte'
+export {default as Section} from './Section.svelte'
+export {default as Sponsors} from './Sponsors.svelte'
+export {default as Stats} from './Stats.svelte'

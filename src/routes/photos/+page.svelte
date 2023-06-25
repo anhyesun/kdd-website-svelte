@@ -1,14 +1,12 @@
 <script lang="ts">
-  import Photo from '$lib/components/Photo.svelte'
   import type {PageServerData} from './$types'
+  import {Photos} from '$lib/components'
   export let data: PageServerData
 </script>
 
-<section>
-  <h1>Photos</h1>
-  <div class="flex-row gap-8 [&>a]:w-60">
-    {#each data.photos as photo}
-      <Photo {photo} />
-    {/each}
+<section class="flex-center flex-col">
+  <h1 class="text-3xl font-bold p-10">Photos</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+    <Photos dbPhotos={data.photos} />
   </div>
 </section>
