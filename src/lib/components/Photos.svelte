@@ -8,19 +8,21 @@
 </script>
 
 {#each dbPhotos as { title, description, photos, id } (id)}
-  {#each photos as photo (photo.id)}
-    <button on:click={() => (selectedPhotoAttachment = photo)}>
-      <div class="bg-slate-200 h-72 w-96 overflow-clip rounded">
-        <img
-          class="w-full h-full object-cover hover:scale-125 transition-transform"
-          src={photo.url}
-          alt="{description} {photo.filename}"
-          loading="lazy" />
-      </div>
-      <div class="text-lg font-bold">{title}</div>
-      <div>{description}</div>
-    </button>
-  {/each}
+  {#if photos}
+    {#each photos as photo (photo.id)}
+      <button on:click={() => (selectedPhotoAttachment = photo)}>
+        <div class="bg-slate-200 h-72 w-96 overflow-clip rounded">
+          <img
+            class="w-full h-full object-cover hover:scale-125 transition-transform"
+            src={photo.url}
+            alt="{description} {photo.filename}"
+            loading="lazy" />
+        </div>
+        <div class="text-lg font-bold">{title}</div>
+        <div>{description}</div>
+      </button>
+    {/each}
+  {/if}
 {/each}
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

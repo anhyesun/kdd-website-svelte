@@ -13,7 +13,7 @@
 
 <nav
   class={clsx(
-    'z-30 m-auto max-w-4xl flex-row justify-between p-4 pt-10',
+    'z-30 m-auto max-w-4xl flex items-center flex-col-reverse sm:flex-row justify-between p-4 pt-10',
     isHome && 'absolute inset-x-0'
   )}>
   <a href="/" class="w-36"><img src={isHome ? kddLogo1 : kddLogo2} alt="kdd logo" /></a>

@@ -52,7 +52,7 @@
 </section>
 <section>
   <h2>Organizers</h2>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
     {#each data.organizers as organizer}
       <Organizer {organizer} />
     {/each}

@@ -1,15 +1,16 @@
 <script lang="ts">
   import {EventCard, Section} from '$lib/components'
   import comingSoonPoster from '$lib/images/coming-soon.jpg'
+  import {DateTime} from 'luxon'
   import type {PageData} from './$types'
   export let data: PageData
   const {events} = data
 
   const pastEvents: DB.Event[] = []
   const upcomingEvents: DB.Event[] = []
-  const now = new Date().getMilliseconds()
+
   events.forEach((event) => {
-    if (new Date(event.date).getMilliseconds() < now) {
+    if (DateTime.fromISO(event.date).diffNow().toMillis() < 0) {
       pastEvents.push(event)
     } else {
       upcomingEvents.push(event)
@@ -19,7 +20,7 @@
 
 <div class="flex-col gap-16">
   <Section title="Upcoming Event">
-    {#if upcomingEvents.length > 0}
+    {#if upcomingEvents?.length > 0}
       {#each upcomingEvents as event}
         <EventCard {event} />
       {/each}

@@ -3,7 +3,7 @@
   import {Button} from '$lib/components'
   export let event: DB.Event
 
-  $: isPastEvent = new Date(event.date).getMilliseconds() < new Date().getMilliseconds()
+  $: isPastEvent = DateTime.fromISO(event.date).diffNow().toMillis() < 0
 </script>
 
 <div class="w-full md:max-h-72 rounded-md overflow-hidden grid max-md:grid-cols-1 md:grid-cols-2">

@@ -3,9 +3,10 @@
   import ellipse from '$lib/images/ellipse.svg'
   import type {PageData} from './$types'
   import {LinkedIn, Slack} from '$lib/icons'
+  import {DateTime} from 'luxon'
   export let data: PageData
 
-  $: isPastEvent = new Date(data.event.date).getMilliseconds() < new Date().getMilliseconds()
+  $: isPastEvent = DateTime.fromISO(data.event.date).diffNow().toMillis() < 0
 </script>
 
 <div class="flex-col gap-10">
