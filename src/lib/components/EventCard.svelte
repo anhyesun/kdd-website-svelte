@@ -26,7 +26,7 @@
     </p>
     {#if event.joinLink}
       <Button disabled={isPastEvent} class="rounded-full" href={event.joinLink}>
-        {isPastEvent ? 'CLOSED' : 'SIGN UP'}
+        {isPastEvent ? 'CLOSED' : 'RSVP'}
       </Button>
     {/if}
   </div>
