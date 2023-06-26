@@ -51,9 +51,7 @@
     </div>
   </Section>
 
-  <Section title="Contact Us">
-    <a class="text-2xl font-bold text-center" href="mailto:vancouverkdd@gmail.com">
-      vancouverkdd@gmail.com
-    </a>
+  <Section title="Contact Us" class="text-center">
+    <a class="text-2xl font-bold" href="mailto:vancouverkdd@gmail.com"> vancouverkdd@gmail.com </a>
   </Section>
 </div>

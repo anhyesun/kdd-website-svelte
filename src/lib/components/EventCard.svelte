@@ -6,7 +6,7 @@
   $: isPastEvent = DateTime.fromISO(event.date).diffNow().toMillis() < 0
 </script>
 
-<div class="w-full md:max-h-72 rounded-md overflow-hidden grid max-md:grid-cols-1 md:grid-cols-2">
+<div class="w-full md:max-h-72 rounded-md grid max-md:grid-cols-1 md:grid-cols-2">
   <div class="h-full overflow-hidden">
     <img
       class="h-full w-full object-cover hover:scale-110 transition-transform duration-500"
