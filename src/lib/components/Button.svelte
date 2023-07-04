@@ -4,6 +4,7 @@
   export let size: 'sm' | 'md' | 'lg' | 'xl' = 'md'
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
   this={$$restProps.href && !disabled ? 'a' : 'button'}
   on:click
