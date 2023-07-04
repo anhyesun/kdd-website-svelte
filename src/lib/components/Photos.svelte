@@ -12,7 +12,7 @@
     {#each photos as photo (photo.id)}
       <button
         on:click={() => (selectedPhotoAttachment = photo)}
-        class="flex-col items-center w-96 gap-2">
+        class="flex-col items-center w-96 min-w-96 gap-2">
         <div class="bg-slate-200 h-72 w-full overflow-clip rounded">
           <img
             class="w-full h-full object-cover hover:scale-125 transition-transform"
