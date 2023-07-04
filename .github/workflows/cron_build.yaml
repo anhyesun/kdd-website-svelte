@@ -1,4 +1,4 @@
-name: Jenkins Docker Images CI
+name: Netlify build every hour
 
 on:
   schedule:
