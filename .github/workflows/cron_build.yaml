@@ -1,0 +1,19 @@
+name: Netlify build every hour
+
+on:
+  schedule:
+    - cron: 0 * * * *
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the Docker image
+        run: curl -X POST https://api.netlify.com/build_hooks/649be2362a4f554692344160
