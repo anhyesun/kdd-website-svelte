@@ -8,7 +8,7 @@
   export let href: string
 </script>
 
-<a {href}>
+<a {href} target="_blank">
   {#if socialMediaType === 'github'}
     <Github />
   {:else if socialMediaType === 'linkedin'}
