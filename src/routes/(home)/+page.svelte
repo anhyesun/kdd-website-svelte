@@ -9,6 +9,13 @@
   $: isPastEvent = DateTime.fromISO(data.event.date).diffNow().toMillis() < 0
 </script>
 
+<svelte:head>
+  <title>
+    Vancouver KDD - 저희는 밴쿠버 한인 개발자 디자이너로 이루어져 있으며 네트워킹 및 한인 사회에
+    기여를 추구하는 모임 입니다.
+  </title>
+</svelte:head>
+
 <div class="flex-col gap-10">
   <section class={`flex-center h-screen bg-[url('$lib/images/hero-bg.jpg')] bg-cover bg-center`}>
     <div class="flex-col items-center gap-8 text-center text-white px-4">

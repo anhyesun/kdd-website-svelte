@@ -5,6 +5,10 @@
   import aboutUs0 from '$lib/images/about-us-0.jpg'
 </script>
 
+<svelte:head>
+  <title>Vancouver KDD - About Us. 소개</title>
+</svelte:head>
+
 <section>
   <h2>Korean Developer & Designer</h2>
   <p>

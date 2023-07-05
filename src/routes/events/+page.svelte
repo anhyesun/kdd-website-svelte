@@ -18,6 +18,10 @@
   })
 </script>
 
+<svelte:head>
+  <title>Vancouver KDD - Events. 이벤트</title>
+</svelte:head>
+
 <div class="flex-col gap-16">
   <Section title="Upcoming Event">
     {#if upcomingEvents?.length > 0}
