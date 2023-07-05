@@ -26,7 +26,8 @@
         <p class="font-medium">{event.location ?? ''}</p>
       </div>
       <h3 class="text-2xl font-bold line-clamp-1">{event.title ?? ''}</h3>
-      <p class="line-clamp-6 md:line-clamp-4 text-sm">
+      <!-- <p class="line-clamp-6 md:line-clamp-4 text-sm"> original code not working in safari -->
+      <p class="line-clamp-6-safari text-sm">
         {@html Marked.parse(event.description ?? '')}
       </p>
       {#if event.joinLink}
@@ -76,3 +77,30 @@
     </div>
   </div>
 </dialog>
+
+<style>
+  .line-clamp-6-safari {
+    display: -webkit-box;
+    overflow: hidden;
+    /* -webkit-line-clamp: 3; */
+    -webkit-box-orient: vertical;
+    text-overflow: hidden;
+    height: 5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .line-clamp-6-safari {
+      display: -webkit-box;
+      overflow: hidden;
+      /* -webkit-line-clamp: 3; */
+      -webkit-box-orient: vertical;
+      text-overflow: hidden;
+      height: 7.5rem;
+    }
+  }
+  /* 
+  .md\:line-clamp-4-safari {
+    height: 1rem;
+  } */
+</style>
