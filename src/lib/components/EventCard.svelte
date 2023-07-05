@@ -11,10 +11,10 @@
 </script>
 
 <button on:click={() => dialog?.showModal()}>
-  <div class="w-full rounded-md grid max-md:grid-cols-1 md:grid-cols-2">
+  <div class="w-full rounded-md grid max-md:grid-cols-1 md:grid-cols-2 group">
     <div class="h-full md:max-h-72 overflow-hidden">
       <img
-        class="h-full w-full object-cover hover:scale-110 transition-transform duration-500"
+        class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
         src={event.poster?.url}
         alt="event poster" />
     </div>
