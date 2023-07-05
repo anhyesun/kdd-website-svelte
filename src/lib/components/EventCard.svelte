@@ -32,10 +32,13 @@
       </p>
       {#if event.joinLink}
         <Button
-        on:click={e=> {
-          e.stopImmediatePropagation()
-        }}
-        disabled={isPastEvent} class="rounded-full" href={event.joinLink} target="_blank">
+          on:click={(e) => {
+            e.stopImmediatePropagation()
+          }}
+          disabled={isPastEvent}
+          class="rounded-full"
+          href={event.joinLink}
+          target="_blank">
           {isPastEvent ? 'CLOSED' : 'RSVP'}
         </Button>
       {/if}
@@ -43,7 +46,7 @@
   </div>
 </button>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
   bind:this={dialog}
   on:click={() => dialog.close()}
