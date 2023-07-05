@@ -18,13 +18,14 @@
         모임 입니다.
       </h2>
       <div class="flex-row gap-8">
-        <Button class="gap-2" href="https://www.linkedin.com/company/vancouver-kdd">
+        <Button class="gap-2" href="https://www.linkedin.com/company/vancouver-kdd" target="_blank">
           <LinkedIn class="h-5" />
           LINKEDIN
         </Button>
         <Button
           class="gap-2"
-          href="https://join.slack.com/t/vancouverkdd/shared_invite/zt-1xyhcghtg-OIgE_8OO_SmBMpyOPuH5Ew">
+          href="https://join.slack.com/t/vancouverkdd/shared_invite/zt-1xyhcghtg-OIgE_8OO_SmBMpyOPuH5Ew"
+          target="_blank">
           <Slack />
           JOIN SLACK
         </Button>
