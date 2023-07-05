@@ -28,15 +28,23 @@
   <span class="font-bold text-xl">Developed by</span>
   <div class="max-w-4xl">
     {#each developers as developer}
-      <a class={clsx('mx-1', developer.link && 'font-medium')} href={developer.link}
-        >{developer.name}</a>
+      <a
+        class={clsx('mx-1', developer.link && 'font-medium')}
+        href={developer.link}
+        target="_blank">
+        {developer.name}
+      </a>
     {/each}
   </div>
   <span class="font-bold text-xl">Special thanks to</span>
   <div class="max-w-4xl">
     {#each supporters as supporter}
-      <a class={clsx('mx-1', supporter.link && 'font-medium')} href={supporter.link}
-        >{supporter.name}</a>
+      <a
+        class={clsx('mx-1', supporter.link && 'font-medium')}
+        href={supporter.link}
+        target="_blank">
+        {supporter.name}
+      </a>
     {/each}
   </div>
 </footer>
