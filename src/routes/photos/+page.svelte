@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Vancouver KDD - Photos page. 사진첩</title>
+  <title>Vancouver KDD - Photos 사진첩</title>
 </svelte:head>
 
 <section class="flex-center flex-col">

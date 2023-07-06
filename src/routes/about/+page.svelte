@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Vancouver KDD - About Us. 소개</title>
+  <title>Vancouver KDD - About 소개</title>
 </svelte:head>
 
 <section>

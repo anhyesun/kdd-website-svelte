@@ -32,8 +32,8 @@
   bind:this={dialog}
   on:click={() => dialog.close()}
   on:close={() => (selectedPhotoAttachment = null)}
-  class="bg-transparent backdrop-blur-sm max-w-full max-h-full">
-  <div class="w-screen h-screen p-10 md:p-20 flex-center">
+  class="bg-transparent backdrop-blur-sm max-w-full max-h-full min-w-full min-h-full">
+  <div class="w-full h-screen p-0 md:p-20 flex-center">
     <img
       class="bg-slate-200 max-w-full max-h-full object-contain rounded"
       src={selectedPhotoAttachment?.url}
