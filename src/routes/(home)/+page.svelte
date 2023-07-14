@@ -2,7 +2,7 @@
   import {Button, EventCard, Section, Stats, Sponsors, Photos} from '$lib/components'
   import ellipse from '$lib/images/ellipse.svg'
   import type {PageData} from './$types'
-  import {LinkedIn, Slack} from '$lib/icons'
+  import {LinkedIn, Slack, naverCafe} from '$lib/icons'
   import {DateTime} from 'luxon'
   export let data: PageData
 
@@ -25,9 +25,9 @@
         모임 입니다.
       </h2>
       <div class="flex-row gap-8">
-        <Button class="gap-2" href="https://www.linkedin.com/company/vancouver-kdd" target="_blank">
-          <LinkedIn class="h-5" />
-          LINKEDIN
+        <Button class="gap-1.5" href="https://cafe.naver.com/vancouverkdd" target="_blank">
+          <img src={naverCafe} alt="naver-cafe" height="24" width="24" />
+          NAVER CAFE
         </Button>
         <Button
           class="gap-2"
@@ -35,6 +35,10 @@
           target="_blank">
           <Slack />
           JOIN SLACK
+        </Button>
+        <Button class="gap-2" href="https://www.linkedin.com/company/vancouver-kdd" target="_blank">
+          <LinkedIn class="h-5" />
+          LINKEDIN
         </Button>
       </div>
     </div>
