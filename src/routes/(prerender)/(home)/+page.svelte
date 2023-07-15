@@ -4,8 +4,11 @@
   import type {PageData} from './$types'
   import {LinkedIn, Slack, naverCafe} from '$lib/icons'
   import {DateTime} from 'luxon'
+  import {applyAction, enhance} from '$app/forms'
+  import type {ActionData as SubscribeActionData} from '../../api/subscribe/$types'
   export let data: PageData
 
+  export let form: SubscribeActionData
   $: isPastEvent = DateTime.fromISO(data.event.date).diffNow().toMillis() < 0
 </script>
 
@@ -19,12 +22,14 @@
 <div class="flex-col gap-10">
   <section class={`flex-center h-screen bg-[url('$lib/images/hero-bg.jpg')] bg-cover bg-center`}>
     <div class="flex-col items-center gap-8 text-center text-white px-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-shadow-lg">Vancouver KDD</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-shadow-lg text-transparent sm:text-inherit">
+        Vancouver KDD
+      </h1>
       <h2 class="text-lg md:text-xl">
         저희는 밴쿠버 한인 개발자 디자이너로 이루어져 있으며 네트워킹 및 한인 사회에 기여를 추구하는
         모임 입니다.
       </h2>
-      <div class="flex-row gap-8">
+      <div class="flex-col gap-2 sm:flex-row sm:gap-8">
         <Button class="gap-1.5" href="https://cafe.naver.com/vancouverkdd" target="_blank">
           <img src={naverCafe} alt="naver-cafe" height="24" width="24" />
           NAVER CAFE
@@ -41,17 +46,33 @@
           LINKEDIN
         </Button>
       </div>
-      <form method="POST">
-        <label>
-          Email
-          <input name="email" type="email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" />
-        </label>
-        <button>Log in</button>
-      </form>
+      {#if form}
+        {#if form.status === 'success'}
+          <div>Email successfully registered</div>
+        {:else if form.status === 'failed'}
+          <div>Error: {form.message}</div>
+        {/if}
+      {:else}
+        <form
+          use:enhance={() =>
+            async ({result}) => {
+              await applyAction(result)
+            }}
+          action="/api/subscribe"
+          method="POST">
+          <div class="flex-col gap-2 sm:flex-row">
+            <!-- <label>
+              Name
+              <input name="name" class="text-black" />
+            </label> -->
+            <label>
+              Email
+              <input name="email" type="email" class="text-black" />
+            </label>
+            <Button>Subscribe</Button>
+          </div>
+        </form>
+      {/if}
     </div>
     <img class="absolute bottom-0 w-full" src={ellipse} alt="ellipse" />
   </section>
@@ -78,3 +99,13 @@
     <a class="text-2xl font-bold" href="mailto:vancouverkdd@gmail.com"> vancouverkdd@gmail.com </a>
   </Section>
 </div>
+
+<style lang="sass">
+  form
+    label
+      @apply flex gap-2 items-center mr-2
+    input
+      @apply rounded p-3
+    button
+      @apply font-bold
+</style>
