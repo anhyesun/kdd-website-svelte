@@ -41,6 +41,17 @@
           LINKEDIN
         </Button>
       </div>
+      <form method="POST">
+        <label>
+          Email
+          <input name="email" type="email" />
+        </label>
+        <label>
+          Password
+          <input name="password" type="password" />
+        </label>
+        <button>Log in</button>
+      </form>
     </div>
     <img class="absolute bottom-0 w-full" src={ellipse} alt="ellipse" />
   </section>
