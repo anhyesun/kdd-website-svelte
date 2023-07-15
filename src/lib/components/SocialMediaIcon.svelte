@@ -4,7 +4,7 @@
   import Link from '$lib/images/socialIcons/Link.svelte'
   import LinkedIn from '$lib/images/socialIcons/LinkedIn.svelte'
 
-  export let socialMediaType: string = 'other'
+  export let socialMediaType = 'other'
   export let href: string
 </script>
 
