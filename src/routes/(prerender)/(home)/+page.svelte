@@ -4,11 +4,11 @@
   import type {PageData} from './$types'
   import {LinkedIn, Slack, naverCafe} from '$lib/icons'
   import {DateTime} from 'luxon'
-  import {applyAction, enhance} from '$app/forms'
-  import type {ActionData as SubscribeActionData} from '../../api/subscribe/$types'
+  // import {applyAction, enhance} from '$app/forms'
+  // import type {ActionData as SubscribeActionData} from '../../api/subscribe/$types'
   export let data: PageData
 
-  export let form: SubscribeActionData
+  // export let form: SubscribeActionData
   $: isPastEvent = DateTime.fromISO(data.event.date).diffNow().toMillis() < 0
 </script>
 
@@ -46,7 +46,7 @@
           LINKEDIN
         </Button>
       </div>
-      {#if form}
+      <!-- {#if form}
         {#if form.status === 'success'}
           <div>Email successfully registered</div>
         {:else if form.status === 'failed'}
@@ -61,10 +61,6 @@
           action="/api/subscribe"
           method="POST">
           <div class="flex-col gap-2 sm:flex-row">
-            <!-- <label>
-              Name
-              <input name="name" class="text-black" />
-            </label> -->
             <label>
               Email
               <input name="email" type="email" class="text-black" />
@@ -72,7 +68,7 @@
             <Button>Subscribe</Button>
           </div>
         </form>
-      {/if}
+      {/if} -->
     </div>
     <img class="absolute bottom-0 w-full" src={ellipse} alt="ellipse" />
   </section>
@@ -100,7 +96,7 @@
   </Section>
 </div>
 
-<style lang="sass">
+<!-- <style lang="sass">
   form
     label
       @apply flex gap-2 items-center mr-2
@@ -108,4 +104,4 @@
       @apply rounded p-3
     button
       @apply font-bold
-</style>
+</style> -->
